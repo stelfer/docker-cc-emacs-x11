@@ -23,7 +23,10 @@ RUN apt-get install -y \
     libstdc++-10-dev \
     libasan6 git \
     iwyu \
-    ccache
+    ccache \
+    gdb \
+    xxd
+
 
 RUN update-alternatives --install /usr/bin/c89 c89 /usr/bin/clang-$TOOLCHAIN_VER 50
 RUN update-alternatives --install /usr/bin/cc cc /usr/bin/clang-$TOOLCHAIN_VER 50
