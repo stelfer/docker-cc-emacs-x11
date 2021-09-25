@@ -24,7 +24,13 @@ RUN echo $'\nsource /etc/bash_completion.d/git-prompt\n\
 GIT_PS1_SHOWUPSTREAM=1\n\
 export GIT_PS1_SHOWCOLORHINTS=1\n\
 export GIT_PS1_SHOWDIRTYSTATE=1\n\
-PROMPT_COMMAND=\'__git_ps1 "\e[0;36m\u\e[0m@\e[0;35m\h\e[0m:\e[0;33m\w\e[0m" "\\$ "\'\n\
+unset PS1\n\
+cyan=$(tput setaf 6)\n\
+magenta=$(tput setaf 5)\n\
+yellow=$(tput setaf 3)\n\
+reset=$(tput sgr0)\n\
+PROMPT_COMMAND='__git_ps1 "\[$cyan\]\u\[$reset\]@\[$magenta\]\h\[$reset\]:\[$yellow\]\w\[$reset
+\]" "\$ "'\n\
 ' >> ~/.bashrc
 
 # Pull .emacs.d 
