@@ -28,10 +28,16 @@ unset PS1\n\
 cyan=$(tput setaf 6)\n\
 magenta=$(tput setaf 5)\n\
 yellow=$(tput setaf 3)\n\
-reset=$(tput sgr0)\n\
-PROMPT_COMMAND='__git_ps1 "\[$cyan\]\u\[$reset\]@\[$magenta\]\h\[$reset\]:\[$yellow\]\w\[$reset
-\]" "\$ "'\n\
+reset=$(tput sgr0) \n\
+PROMPT_COMMAND=\'__git_ps1 "\[$cyan\]\u\[$reset\]@\[$magenta\]\h\[$reset\]:\[$yellow\]\w\[$reset\]" "\$ "\'\n\
 ' >> ~/.bashrc
+
+RUN echo $'\n\
+define xxd\n\
+  dump binary memory dump.bin $arg0 $arg0+$arg1\n\
+  shell xxd dump.bin\n\
+end\n\
+' >> ~/.gdbinit
 
 # Pull .emacs.d 
 RUN cd ~ && git clone https://github.com/stelfer/emacs.d.git .emacs.d
