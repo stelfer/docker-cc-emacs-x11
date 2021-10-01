@@ -31,5 +31,6 @@ RUN apt-get install -y \
 RUN update-alternatives --install /usr/bin/c89 c89 /usr/bin/clang-$TOOLCHAIN_VER 50
 RUN update-alternatives --install /usr/bin/cc cc /usr/bin/clang-$TOOLCHAIN_VER 50
 RUN update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++-$TOOLCHAIN_VER 50
+RUN update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-$TOOLCHAIN_VER 50
 
 RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/*
