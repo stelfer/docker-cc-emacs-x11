@@ -5,7 +5,7 @@ DIST=ubuntu
 DIST_VER=focal
 
 TOOLCHAIN=clang
-TOOLCHAIN_VER=12
+TOOLCHAIN_VER=13
 
 DOCKER_KEY="$(cat ~/shared/keys/docker_ecdsa.pub)"
 GITHUB_KEY="$(cat ~/shared/keys/github_ecdsa)"
