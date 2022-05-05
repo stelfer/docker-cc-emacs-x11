@@ -25,7 +25,8 @@ RUN apt-get install -y \
     iwyu \
     ccache \
     gdb \
-    xxd
+    xxd \
+    unzip
 
 
 RUN update-alternatives --install /usr/bin/c89 c89 /usr/bin/clang-$TOOLCHAIN_VER 50
