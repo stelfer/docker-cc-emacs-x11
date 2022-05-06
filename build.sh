@@ -2,7 +2,7 @@
 
 
 DIST=ubuntu
-DIST_VER=focal
+DIST_VER=jammy
 
 TOOLCHAIN=clang
 TOOLCHAIN_VER=13
