@@ -2,7 +2,7 @@
 ARG DIST_VER=focal
 FROM ubuntu:$DIST_VER
 ARG DIST_VER
-ARG TOOLCHAIN_VER=13
+ARG TOOLCHAIN_VER=14
 
 RUN apt-get update -y ;\
     apt-get upgrade -y
