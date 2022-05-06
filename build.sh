@@ -7,8 +7,11 @@ DIST_VER=focal
 TOOLCHAIN=clang
 TOOLCHAIN_VER=13
 
-DOCKER_KEY="$(cat ~/shared/keys/docker_ecdsa.pub)"
-GITHUB_KEY="$(cat ~/shared/keys/github_ecdsa)"
+INSTANCE_NAME=dev
+INSTANCE_PORT=2222
+
+DOCKER_KEY="$(cat ~/.ssh/docker_ecdsa.pub)"
+GITHUB_KEY="$(cat ~/.ssh/github_ecdsa)"
 
 DIST_BASE=${DIST}_${DIST_VER}
 TOOLCHAIN_BASE=${TOOLCHAIN}_${TOOLCHAIN_VER}
@@ -42,9 +45,9 @@ set -ue
 	   .)
 
 
-/bin/true && (
-    docker run -d -p 2222:22 --name dev --hostname dev ${DEV_BASE}
-    docker update --restart unless-stopped dev
+true && (
+    docker run -d -p ${INSTANCE_PORT}:22 --name ${INSTANCE_NAME} --hostname ${INSTANCE_NAME} ${DEV_BASE}
+    docker update --restart unless-stopped ${INSTANCE_NAME}
     )
     
 
