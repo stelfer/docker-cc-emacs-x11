@@ -10,12 +10,12 @@ apt-get install -y \
     llvm-$CLANG_VER \
     clang-$CLANG_VER \
     clangd-$CLANG_VER \
-    clang-tidy-$CLANG_VER \
     libstdc++-${GCC_VER}-dev \
     libasan6
 
 update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-$CLANG_VER 50
-update-alternatives --install /usr/bin/clang-tidy clang-tidy /usr/bin/clang-tidy-$CLANG_VER 50
+update-alternatives --install /usr/bin/clang clang /usr/bin/clang-$CLANG_VER 50
+update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-$CLANG_VER 50
 update-alternatives --install /usr/bin/llvm-symbolizer llvm-symbolizer /usr/bin/llvm-symbolizer-$CLANG_VER 50
 update-alternatives --install /usr/bin/llvm-addr2line llvm-addr2line /usr/bin/llvm-addr2line-$CLANG_VER 50
 
