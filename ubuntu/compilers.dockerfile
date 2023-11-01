@@ -29,6 +29,9 @@ RUN /root/clang.sh
 ADD gcc.sh /root/gcc.sh
 RUN /root/gcc.sh
 
+ADD cmake.sh /root/cmake.sh
+RUN /root/cmake.sh
+
 RUN apt-get install -y dialog man-db
 
 RUN apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/*
