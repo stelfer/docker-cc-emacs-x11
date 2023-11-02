@@ -9,7 +9,7 @@ ARG GDB_VER
 RUN apt-get update -y ; apt-get upgrade -y
 
 RUN apt-get install -y python3-software-properties software-properties-common wget \
-    gnupg2 apt-transport-https curl
+    gnupg2 apt-transport-https curl python-is-python3
 
 RUN apt-get install -y \
     cmake \
@@ -31,6 +31,11 @@ RUN /root/gcc.sh
 
 ADD cmake.sh /root/cmake.sh
 RUN /root/cmake.sh
+
+ADD ../functions.sh /root/functions.sh
+ADD functions.sh /root/ubuntu/functions.sh
+ADD ninja.sh /root/ubuntu/ninja.sh
+RUN /root/ubuntu/ninja.sh
 
 RUN apt-get install -y dialog man-db
 
