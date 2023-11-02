@@ -7,5 +7,8 @@ build_ninja() {
     git checkout release
     ./configure.py --bootstrap
     install -t $BINDIR $TMPDIR/ninja
+
+    # Required by cmake 3.28.1 ...
+    ln -sf $BINDIR/ninja /usr/bin
     rm -r $TMPDIR
 }
