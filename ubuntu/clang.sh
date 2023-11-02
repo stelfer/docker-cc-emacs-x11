@@ -25,11 +25,10 @@ apt-get install -y \
     libstdc++-${GCC_VER}-dev \
     libasan6
 
-update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-$CLANG_VER 50
-update-alternatives --install /usr/bin/clang clang /usr/bin/clang-$CLANG_VER 50
-update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-$CLANG_VER 50
-update-alternatives --install /usr/bin/llvm-symbolizer llvm-symbolizer /usr/bin/llvm-symbolizer-$CLANG_VER 50
-update-alternatives --install /usr/bin/llvm-addr2line llvm-addr2line /usr/bin/llvm-addr2line-$CLANG_VER 50
-update-alternatives --install /usr/bin/clang-scan-deps clang-scan-deps /usr/bin/clang-scan-deps-$CLANG_VER 50
-
+link_ver clangd $CLANG_VER
+link_ver clang $CLANG_VER
+link_ver clang++ $CLANG_VER
+link_ver llvm-symbolizer $CLANG_VER
+link_ver llvm-addr2line $CLANG_VER
+link_ver clang-scan-deps $CLANG_VER
 

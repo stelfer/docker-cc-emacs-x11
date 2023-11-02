@@ -15,4 +15,13 @@ add_repo () {
     echo "deb [signed-by=$KEYRING] $REP" | tee $SOURCES >/dev/null
 }
 
+link_ver () {
+    GRP=$1
+    VER=$2
+    PRIO=10${VER}
+    update-alternatives --remove $GRP /usr/bin/$GRP-$VER
+    update-alternatives --install /usr/bin/$GRP $GRP /usr/bin/$GRP-$VER $PRIO
+    update-alternatives --auto $GRP
+}
+
 
